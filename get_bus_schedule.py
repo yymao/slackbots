@@ -25,5 +25,5 @@ if __name__ == '__main__':
 
     with open('bus_schedule.py', 'w') as f:
         f.write('slac_times=[{0}]\n'.format(','.join(map(str, slac_times))))
-        f.write('campus_times=[{0}]\n'.format(','.join(map(str, slac_times))))
+        f.write('campus_times=[{0}]\n'.format(','.join(map(str, campus_times))))
 
