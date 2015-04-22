@@ -26,7 +26,7 @@ _escape_pattern = r'[^A-Za-z0-9\-+*/%&|~!=()<>.,#]|\.(?=[A-Za-z_])'
 
 _error_msg = '''Hmmm... something\'s wrong with the input expression.
 Type `/calc help` to see supported cosmology functions.
-Or just try asking <https://www.google.com/?q={0}|Google>.'''
+Or just try asking <https://www.google.com/?#q={0}|Google>.'''
 
 def program(data):
     expr = data['text'].strip()
