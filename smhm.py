@@ -1,7 +1,7 @@
 __all__ = ['sm']
 from math import exp, log10
 
-def sm(hm, z):
+def sm(hm, z=0):
     """stellar mass given halo mass, redshift (Eq. 3 of Behroozi+13)"""
     a = 1./(1.+z)
     loghm = log10(hm)
