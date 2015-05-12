@@ -8,11 +8,14 @@ _globals = {'__builtins__':{}}
 _locals = vars(math)
 try:
     import cosmo
+    import smhm
 except ImportError:
     pass
 else:
     for k in cosmo.__all__:
         _locals[k] = cosmo.__dict__[k]
+    for k in smhm.__all__:
+        _locals[k] = smhm.__dict__[k]
 
 _help_msg = '''Supports most simple math functions and the following cosmology functions:
 - `cd`: comoving distance [Mpc]
@@ -20,7 +23,12 @@ _help_msg = '''Supports most simple math functions and the following cosmology f
 - `ad`: angular distance [Mpc]
 - `age`: age of the universe [Gyr]
 - `lookback`: lookback time [Gyr]
-All cosmology functions have this call signature: `(z, om=0.3, ol=1-om, h=1)`. Note that h is default to 1.'''
+All cosmology functions have this call signature: `(z, om=0.3, ol=1-om, h=1)`. Note that h is default to 1.
+
+Also supports the mean stellar mass--halo mass relation from Behroozi+2013:
+- `smhm`: stellar mass [Msun]
+Call signature: `sm(hm, z)`
+'''
 
 _escape_pattern = r'[^A-Za-z0-9\-+*/%&|~!=()<>.,#]|\.(?=[A-Za-z_])'
 
