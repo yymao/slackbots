@@ -5,11 +5,11 @@ from common import escape
 _error_msg = '''*Syntax*: /arxiv [arxiv id] [[comments]]
 Please provide a valid arxiv ID.'''
 
-_output_template = u'{3}> [<http://arxiv.org/abs/{0}|{0}>] *{1}* by {2}'
+_output_template = u'{3}> [<http://arxiv.org/abs/{0}|{0}>] (<http://arxiv.org/pdf/{0}.pdf|PDF>) *{1}* by {2}'
 
 _payload_template = '{{"channel": "{0}", "username": "{1} via arxivbot", "text": "{2}", "link_names": 1}}'
 
-def _format_authors(authors, n=4):
+def _format_authors(authors, n=6):
     return ', '.join(authors[:n]) + (' et al.' if len(authors) > n else '')
 
 def program(data):
