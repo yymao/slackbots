@@ -34,6 +34,6 @@ def program(data):
             output = output1 + output2
         else:
             output = 'Oops... There\'s no more SLAC buses running today.\n'
-    output += '(See the <http://transportation.stanford.edu/marguerite/slac/|full schedule here>.)'
+    output += '(See the <https://transportation.stanford.edu/marguerite/slac/|full schedule here>.)'
 
     return output
