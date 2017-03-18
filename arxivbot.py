@@ -17,7 +17,7 @@ def _format_authors(authors, n=6):
 def program(data):
     query, __, comment = data['text'].strip().partition(' ')
     if comment:
-        comment += r'\n'
+        comment = escape(comment) + r'\n'
 
     arxiv_id = arxiv_re.search(query)
     if arxiv_id is None:
@@ -31,7 +31,7 @@ def program(data):
     output = _output_template.format(entry['key'], \
             escape(re.sub(r'\s+', u' ', entry['title'], re.U)), \
             escape(_format_authors(entry['authors'])), \
-            escape(comment)).encode('utf-8')
+            comment).encode('utf-8')
 
     payload = _payload_template.format(data['channel_id'], data['user_name'], \
             output)
