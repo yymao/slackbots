@@ -5,7 +5,7 @@ from common import escape
 _error_msg = '''*Syntax*: /arxiv [arxiv id] [[comments]]
 Please provide a valid arxiv ID.'''
 
-_output_template = u'{3}> [<http://arxiv.org/abs/{0}|{0}>] (<http://arxiv.org/pdf/{0}.pdf|PDF>) *{1}* by {2}'
+_output_template = u'{3}> [<https://arxiv.org/abs/{0}|{0}>] (<https://arxiv.org/pdf/{0}.pdf|PDF>) *{1}* by {2}'
 
 _payload_template = '{{"channel": "{0}", "username": "{1} via arxivbot", "text": "{2}", "link_names": 1}}'
 
